@@ -16,6 +16,6 @@ pycparser==2.21
 pycurl==7.43.0.6
 Pygments==2.7.1
 PyGObject==3.38.0
-python-apt==2.2.1
+python-apt==
 PyYAML==5.3.1
 sqlparse==0.4.3
