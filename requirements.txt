@@ -13,4 +13,3 @@ pycurl==7.43.0.6
 PyGObject==3.38.0
 python-apt==
 sqlparse==0.4.3
-unattended-upgrades==0.1
