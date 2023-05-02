@@ -1,1 +1,1 @@
-web: gunicorn lyon_palme.wsgi
+web: gunicorn inscriptions_lyon_palmes.wsgi
