@@ -43,9 +43,15 @@
 
 <div class="image-grid">
   {% for adherent in adherents %}
+  {% if adherent.affiche_trombinoscope == True %}
     <div class="image-item">
       <img src="{% static 'images/' %}{{ adherent.nom }}.jpg" alt="{{ adherent.nom }}">
-      <p class="image-name">{{ adherent.nom }} <br> {{ adherent.prenom }}</p>
+      <p class="image-name">{{ adherent.nom }} <br> {{ adherent.prenom }}<br>
+      {% if adherent.affiche_annuaire == True %}
+      {{ adherent.telephone }}
+      {% endif %}
+      </p>  
     </div>
+    {% endif %}
   {% endfor %}
 </div>
