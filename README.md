@@ -135,15 +135,18 @@ Password d’utilisateur: C1Secret!
 ```shell
 Ce connecter en Secrétaire, la secretaire inscris un adhérent
 le compte de l'adhérent ce componsera en deux partie 
-premier *lettre du prenom suivis du nom de famille* 
-le mot de passe sera la date de naissance : *annee mois jours*
+premier *l'initiale du prenom + le nom* 
+le mot de passe sera la date de naissance : *AAAA-MM-JJ*
 une fois la premiere connexion
 ```
+exemple si je crée via un compte secrétaire un compte avec comme nom et prenom BOURAGHDA Yasser et comme date de naissance 20/11/2023
+voici un exemple pour ce connecter désormais comme nageur.
 | Identifiant        | Mot de passe      |
 |--------------------|-------------------|
-| nageur             | C1Secret!         |
+| YBOURAGHDA         | 2023-11-20        |
 
-     
+Des sa premiere connexion le nageur sera invité a changer de mot de passe avec un mot de passe plus robuste, en cas d'oublie du mot de passe
+en rentrant son adresse email, la secretaire lui enverra un nouveau MDP.
 ### 2.5. Navigation entre les Pages
 #### 2.5.1. Formulaire de Accueil
 

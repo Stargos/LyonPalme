@@ -290,9 +290,11 @@ def logout_view(request):
 
 def trombinoscope(request):
     if request.user.is_authenticated and not(request.user.is_superuser):
-        image_list = ['Beatrice.jpeg', 'emma.jpg', 'eva.jpg', 'milan.jpg', 'Tom.jpg']  # Liste des noms d'images
+        adherents = Inscription.objects.all()
+        image_list = ['Beatrice.jpeg', 'emma.jpg', 'eva.jpg', 'milan.jpg', 'Tom.jpg', 'Zaboutine.jpg']  # Liste des noms d'images
 
         context = {
+            'adherents': adherents,
             'image_list': image_list,
         }
 

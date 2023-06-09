@@ -1,96 +1,51 @@
 {% load static %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-<nav style="margin-left:2%" class="navbar navbar-expand-lg navbar-light bg-purple"> <!-- Ajout de la classe "bg-purple" -->
+<nav style="margin-left:2%" class="navbar navbar-expand-lg navbar-light bg-purple">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-        <a class="navbar-brand" style="font-family:Helvetica;font-weight:bold;color:rgb(80, 53, 130);" href="{% url 'inscription:Accueil' %}"><img src="https://images.benchmarkemail.com/client1514081/image13204250.png"  style ="max-width: 150px;"></a>      
+      <a class="navbar-brand" style="font-family:Helvetica;font-weight:bold;color:rgb(80, 53, 130);" href="{% url 'inscription:Accueil' %}"><img src="https://images.benchmarkemail.com/client1514081/image13204250.png"  style ="max-width: 150px;"></a>      
       <a class="nav-item nav-link" href="{% url 'inscription:accueil_nageur' %}">Nageur</a>
       <a class="nav-item nav-link" href="{% url 'inscription:accueil_secretaire' %}">Secrétaire</a>
       <a class="nav-item nav-link" href="{% url 'inscription:logout_view' %}">Déconnexion</a>
     </div>
   </div>
 </nav>
+
 <link rel="stylesheet" href="{% static 'inscription/style.css' %}">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-    <title>Trombinoscope</title>
-    <style>
-        .slider-container {
-            display: flex;
-        }
-    
-        .slider {
-            flex-grow: 1;
-            height: 500px; /* Ajuste la hauteur selon tes besoins */
-            margin-left: 20px; /* Ajuste la valeur de la marge selon tes besoins */
-        }
-    
-        .slider .profile-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            margin-bottom: 10px; /* Ajuste la valeur de la marge selon tes besoins */
-            transform: scale(0.6); /* Ajuste la valeur de l'échelle selon tes besoins */
-        }
-    
-        .navigation {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px; /* Ajuste la largeur selon tes besoins */
-            height: 50px; /* Ajuste la hauteur selon tes besoins */
-            background-color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 50px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    
-        .navigation:hover {
-            background-color: lightgray;
-        }
-    </style>
-</head>
-<body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
-    <script>
-        $(document).ready(function() {
-            var slider = tns({
-                container: '.slider',
-                axis: 'vertical', // Définit le carrousel en mode vertical
-                items: 1,
-                slideBy: 'page',
-                autoplay: true,
-                autoplayButtonOutput: false,
-                mouseDrag: true,
-                controls: false
-            });
-        });
-    </script>
-    <h1>Trombinoscope</h1>
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Définit la taille des colonnes avec une largeur minimale de 200px */
+    gap: 20px; /* Espacement entre les images */
+    justify-items: center; /* Centre les images horizontalement */
+    align-items: center; /* Centre les images verticalement */
+  }
 
-    <div class="slider-container">
-        <div class="slider">
-            {% for image_name in image_list %}
-                <img src="{% static 'images/' %}{{ image_name }}" alt="{{ image_name }}" class="profile-image">
-            {% endfor %}
-        </div>
+  .image-item img {
+    width: 200px; /* Largeur fixe des images */
+    height: auto; /* Maintient le ratio original de l'image */
+  }
 
-        <div class="navigation" onclick="slider.goTo('prev')">
-            &lt;
-        </div>
+  .image-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+  }
+</style>
+
+<h1>Trombinoscope</h1>
+
+<div class="image-grid">
+  {% for adherent in adherents %}
+    <div class="image-item">
+      <img src="{% static 'images/' %}{{ adherent.nom }}.jpg" alt="{{ adherent.nom }}">
+      <p class="image-name">{{ adherent.nom }} <br> {{ adherent.prenom }}</p>
     </div>
-
-</body>
-</html>
+  {% endfor %}
+</div>
