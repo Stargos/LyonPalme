@@ -191,16 +191,16 @@ en accédant a ce formulaire grace a notre superuser crée dans django nous pour
 
 ## 3. Annexes  
 ### 3.1. UserCase    
-![UserCase](dossier_technique/userstory.png) 
+![UserCase](lyon_palme/dossier_technique/userstory.png) 
 
 ### 3.2. Modèle conceptuel de données  
-![Modèle conceptuel de données](dossier_technique/MCD.png)  
+![Modèle conceptuel de données](lyon_palme/dossier_technique/MCD.png)  
   
 ### 3.3. Diagramme de classes
-![Diagramme de classes](dossier_technique/UML.png) 
+![Diagramme de classes](lyon_palme/dossier_technique/UML.png) 
 
 ### 3.4. Diagramme de sequence
-![Diagramme de classes](dossier_technique/sequence.png)
+![Diagramme de classes](lyon_palme/dossier_technique/sequence.png)
 
 ---
 
