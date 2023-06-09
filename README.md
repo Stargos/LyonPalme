@@ -27,15 +27,19 @@ Sup'Chassagnes - Oullins (69)
   1.2. [Technologies et savoir-faire mis en oeuvre](#12-technologies-et-savoir-faire-mis-en-oeuvre)  
 2. [Utiliser l'application](#2-utiliser-lapplication)  
   2.1. [Environnement logiciel requis](#21-environnement-logiciel-requis)  
-  2.2. [Compte SSMS pour ce connecter a la base de données](#22-Compte-SSMS-pour-ce-connecter-a-la-base-de-données)  
-  2.3. [Configuration de l'application pour la connexion à la base de données](#23-Configuration-de-l'application-pour-la-connexion-à-la-base-de-données)
-  2.3.1 [Chaînes de connexion](#231-Chaînes-de-connexion)    
+  2.2. [Base de données](#22-Base-de-données)  
+  2.3. [Installation de l'environnement](#23-Installation-de-l'environnement)
   2.4. [Authentification dans l'application (formulaire de connexion)](#24-authentification-dans-lapplication-formulaire-de-connexion)   
-  2.5. [Navigation entre les formulaires](#25-navigation-entre-les-formulaires)
+  2.5. [Formulaire d'accueil](#25-Formulaire-d'accueil)
+  2.5.1. [Formulaire Connexion](#251-Formulaire-Connexion)
+  2.5.2 [Navigation entre les formulaires](#252-navigation-entre-les-formulaires)
+  2.5.3 [Formulaire d'accueil nageur](#253-Formulaire-d'accueil-nageur)
+  2.5.4 [Formulaire d'accueil secretaire](#254-Formulaire-d'accueil-secretaire)
 3. [Annexes](#3-annexes)  
-  3.1. [Migrer les données de Access vers MySQL](#31-migrer-les-donn%C3%A9es-de-access-vers-mysql)  
-  3.2. [Modèle conceptuel de données](#32-mod%C3%A8le-conceptuel-de-donn%C3%A9es)  
-  3.3. [Diagramme de classes](#33-diagramme-de-classes)  
+  3.1. [UserCase](#31-UserCase)  
+  3.2. [Modèle conceptuel de données](#32-Modèle-conceptuel-de-données)  
+  3.3. [Diagramme de classes](#33-diagramme-de-classes)
+  3.4. [Diagramme de sequence](#34-diagramme-de-sequence)    
 4. [Remerciements](#4-remerciements)  
 
 ---
@@ -85,13 +89,9 @@ Informations sur les versions utilisées lors du développement de l'application
 + VsCode 1.78.2
 
 
-### 2.2. Compte SSMS pour ce connecter a la base de données
-Les logins que nous avons crée qui respectent le CRUD :
+### 2.2. Base de données
+Nous utiliseront pour la construction de ce site la base de données SQLITE
 
-    USER : Pas necessaire
-    PASSWORD :  Pas necessaire
-    
-*Etant donné que nous utilisons une BDD local SQLITE elle n'as aucunement besoin d'username et de mot de passe*
 
 ### 2.3. Installation de l'environnement
 Avant tout il est important d'etre en mesure de bien installer notre application :
@@ -134,6 +134,8 @@ Password d’utilisateur: C1Secret!
 *Pour crée un compte Adhérents il y a des etapes a suivres :*
 ```shell
 Ce connecter en Secrétaire, la secretaire inscris un adhérent
+avec cet url *URL = http://127.0.0.1:8000/inscription/accueil_secretaire/
+ensuite cliquer sur inscrire un adhérent
 le compte de l'adhérent ce componsera en deux partie 
 premier *l'initiale du prenom + le nom* 
 le mot de passe sera la date de naissance : *AAAA-MM-JJ*
@@ -180,7 +182,7 @@ en accédant a ce formulaire grace a notre user crée dans django nous pourrons 
 + Le Nageur peut ce déconnecter 
 + Le Nageur peut retourner dans l'accueil 
 
-#### 2.5.3. Formulaire d'accueil secretaire
+#### 2.5.4. Formulaire d'accueil secretaire
 + *URL = http://127.0.0.1:8000/inscription/accueil_secretaire*
 en accédant a ce formulaire grace a notre superuser crée dans django nous pourrons avoir acces a plusieur fonctionnalité.
 
