@@ -195,9 +195,6 @@ en accédant a ce formulaire grace a notre superuser crée dans django nous pour
 ### 3.3. Diagramme de classes
 ![Diagramme de classes](dossier_technique/UML.png) 
 
-### 3.4. Diagramme de sequence
-![Diagramme de classes](dossier_technique/sequence.png)
-
 ---
 
 ## 4. Remerciements 
